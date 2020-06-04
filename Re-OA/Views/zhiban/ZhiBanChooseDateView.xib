@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="3ro-lz-XJB" customClass="ZhiBanChooseDateView">
+            <rect key="frame" x="0.0" y="0.0" width="303" height="181"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="1rf-QJ-Dt2">
+                    <color key="backgroundColor" red="1" green="0.30520794400000001" blue="0.27223949679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <date key="date" timeIntervalSinceReferenceDate="468216027.35539198">
+                        <!--2015-11-03 04:00:27 +0000-->
+                    </date>
+                </datePicker>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TY9-hK-vT4">
+                    <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MK5-Q7-pca">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="B1B-oI-Ftv"/>
+                        <constraint firstAttribute="height" constant="30" id="SI8-pa-wv1"/>
+                    </constraints>
+                    <state key="normal" title="确定"/>
+                    <connections>
+                        <action selector="confirmDate:" destination="3ro-lz-XJB" eventType="touchUpInside" id="cC9-9x-n6q"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1rf-QJ-Dt2" firstAttribute="top" secondItem="TY9-hK-vT4" secondAttribute="bottom" constant="7" id="3rf-Xd-rWT"/>
+                <constraint firstItem="TY9-hK-vT4" firstAttribute="leading" secondItem="3ro-lz-XJB" secondAttribute="leading" id="5MN-pC-0Pf"/>
+                <constraint firstAttribute="trailing" secondItem="TY9-hK-vT4" secondAttribute="trailing" id="Fr3-Tz-dOK"/>
+                <constraint firstAttribute="trailing" secondItem="MK5-Q7-pca" secondAttribute="trailing" constant="14" id="RUX-zY-aoL"/>
+                <constraint firstItem="TY9-hK-vT4" firstAttribute="leading" secondItem="1rf-QJ-Dt2" secondAttribute="leading" id="fOx-7H-bdy"/>
+                <constraint firstItem="1rf-QJ-Dt2" firstAttribute="trailing" secondItem="TY9-hK-vT4" secondAttribute="trailing" id="foS-4f-qDu"/>
+                <constraint firstItem="MK5-Q7-pca" firstAttribute="top" secondItem="3ro-lz-XJB" secondAttribute="topMargin" id="gbW-Qd-6BZ"/>
+                <constraint firstItem="1rf-QJ-Dt2" firstAttribute="top" secondItem="MK5-Q7-pca" secondAttribute="bottom" constant="8" symbolic="YES" id="kyo-6J-lJM"/>
+                <constraint firstAttribute="bottom" secondItem="1rf-QJ-Dt2" secondAttribute="bottom" id="qqU-ro-aO0"/>
+                <constraint firstItem="TY9-hK-vT4" firstAttribute="top" secondItem="MK5-Q7-pca" secondAttribute="bottom" id="w4k-eH-6Cp"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="datapicker" destination="1rf-QJ-Dt2" id="bby-tB-9kW"/>
+            </connections>
+            <point key="canvasLocation" x="677.5" y="347.5"/>
+        </view>
+    </objects>
+</document>

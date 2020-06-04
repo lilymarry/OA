@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-xdpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <!--<script type="text/javascript" src="file:///android_asset/jquery.min.js"></script>-->
+    <!--<script type="text/javascript" src="file:///android_asset/highcharts.js"></script>-->
+    <!--<script type="text/javascript" src="file:///android_asset/exporting.js"></script>-->
+    <!--<script type="text/javascript" src="file:///android_asset/highcharts-zh_CN.js"></script>-->
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="highcharts.js"></script>
+    <script type="text/javascript" src="exporting.js"></script>
+    <script type="text/javascript" src="highcharts-zh_CN.js"></script>
+    <script type="text/javascript">
+        var Yheight = $Yheight;
+        var series1 = $series1;
+        var series2 = $series2;
+        var series3 = $series3;
+        var charttitle = $charttitle;
+        var danwei = $danwei;
+
+        function init() {
+        	//alert(series1);
+            Highcharts.setOptions({
+                lang: {
+                    resetZoom: '重置缩放'
+                }
+            });
+            $('#container2').highcharts({
+                exporting: {
+                    enabled: false
+                },
+                chart: {
+                    height: Yheight,
+                    zoomType: 'x',
+                    borderWidth: 0,
+                    plotBorderWidth: 0,
+                    type: 'line',
+                    spacingBottom: 15,
+                    spacingLeft: 0,
+                    spacingRight: 0,
+                    spacingTop: 10
+                },
+                subtitle: {
+                    text: charttitle,
+                    x: -20
+                },
+                title: {
+                    text: '换热站记录',
+                    x: -20 //center
+                },
+                xAxis: {
+                    categories: series1.split(',')
+                },
+                yAxis: {
+                    title: {
+                        text: '消耗量'
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                },
+                tooltip: {
+                    crosshairs: [{
+                        width: 1,
+                        color: 'green'
+                    }, {
+                        width: 1,
+                        color: 'red'
+                    }],
+                    formatter: function () {
+                        return "供热面积:" + this.point.name + "㎡<br/>" + this.point.dataLabels.split('&')[1] + danwei + "<br/>" + this.point.dataLabels.split('&')[2] + danwei + "<br/>故障说明:" + this.point.dataLabels.split('&')[0];
+                    }
+                },
+                legend: {
+                    //layout: 'vertical',
+                    //align: 'bottom',
+                    //verticalAlign: 'middle',
+                    borderWidth: 0
+                },
+                series: [{
+                    name: '指标',
+                    data: eval(series2)
+                }, {
+                    name: '消耗量',
+                    data: eval(series3)
+                }]
+            });
+        }
+    </script>
+
+</head>
+
+<body onload="init()">
+
+
+<div id="container2" data_id="1"></div>
+</body>
+</html>

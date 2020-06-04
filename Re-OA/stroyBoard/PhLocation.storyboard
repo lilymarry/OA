@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rQz-3A-6mG">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="2ES-Sp-htA">
+            <objects>
+                <navigationController storyboardIdentifier="ph" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rQz-3A-6mG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dNU-4r-GvB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="71l-2P-cke" kind="relationship" relationship="rootViewController" id="SxM-Ss-MzF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ktE-87-oL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-380.26666666666665" y="354.05333333333334"/>
+        </scene>
+        <!--手机定位-->
+        <scene sceneID="lq0-RU-nGy">
+            <objects>
+                <viewController id="71l-2P-cke" customClass="PhoneLocationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dW5-6S-Hgy"/>
+                        <viewControllerLayoutGuide type="bottom" id="X3F-92-MJQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I5E-hu-IET">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="手机定位" id="ezH-Aj-aYG">
+                        <barButtonItem key="leftBarButtonItem" image="indexTabQuanbu25.png" id="SIO-5S-x89">
+                            <connections>
+                                <action selector="lastBtnPress:" destination="71l-2P-cke" id="IhL-dc-Jjk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aKW-qV-z3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18" y="347"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="indexTabQuanbu25.png" width="25" height="25"/>
+    </resources>
+</document>
